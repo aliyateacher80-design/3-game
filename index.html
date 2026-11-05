@@ -1,0 +1,75 @@
+<!-- 3-ТАҚЫРЫП: ҚАЗАҚ-ЖОҢҒАР ШАЙҚАСТАРЫ -->
+<div id="topic3" class="topic-block" style="font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.1); margin-top: 25px; border: 1px solid #bbf7d0;">
+    <h2 style="color: #065f46; border-bottom: 2px solid #10b981; padding-bottom: 10px; margin-top: 0;">📌 3-сабақ: Қазақ-жоңғар шайқастары</h2>
+    <p style="color: #047857; font-weight: 500;"><b>Зерттеу сұрағы:</b> Неліктен Аңырақай шайқасы қазақ-жоңғар соғысындағы түбегейлі бетбұрыс деп саналады?</p>
+
+    <!-- Оқушы мәліметі -->
+    <div style="background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #86efac;">
+        <label style="color: #065f46; font-weight: bold;">Оқушының аты-жөні:</label><br>
+        <input type="text" id="studentName3" placeholder="Аты-жөніңізді жазыңыз..." style="width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #4ade80; border-radius: 6px; background: #fff; font-size: 14px;">
+    </div>
+
+    <!-- 🏎️ СПОРТТЫҚ ЖАРЫС МЕНЕДЖЕРИ / ШАЙҚАС СТРАТЕГИЯСЫ -->
+    
+    <!-- 1-бөлім: Қолбасшылар мен батырлар -->
+    <div style="background: white; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 6px solid #10b981; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+        <h4 style="color: #065f46; margin-top: 0;">🛡️ 1-кезең: Хандар мен батырлардың рөлі [3 балл]</h4>
+        <p style="color: #334155;"><i>Жоңғар шапқыншылығына қарсы күресте қолбасшылық жасаған батырлардың қызметін дұрыс анықтаңыз:</i></p>
+        <label style="cursor: pointer;"><input type="radio" name="strat1" value="3"> Әбілқайыр хан, Қабанбай, Бөгенбай, Райымбек секілді батырлар халық жасағын ұйымдастырып, шешуші шайқастарда қолбасшылық етті.</label><br><br>
+        <label style="cursor: pointer;"><input type="radio" name="strat1" value="0"> Олар тек бейбіт келіссөздер жүргізіп, соғыс әрекеттеріне қатысқан жоқ.</label>
+    </div>
+
+    <!-- 2-бөлім: Аңырақай шайқасының стратегиясы -->
+    <div style="background: white; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 6px solid #059669; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+        <h4 style="color: #065f46; margin-top: 0;">⚔️ 2-кезең: Шапшаң менеджмент & Стратегия [4 балл]</h4>
+        <p style="color: #334155;"><i>Неліктен Аңырақай шайқасы соғыстағы түбегейлі бетбұрыс болды?</i></p>
+        <label style="cursor: pointer;"><input type="radio" name="strat2" value="4"> Үш жүздің күші біріктіріліп, біртұтас майдан құрылды және жауға күйрете соққы беріліп, азаттық күрестің рухы көтерілді.</label><br><br>
+        <label style="cursor: pointer;"><input type="radio" name="strat2" value="0"> Қазақтар бұл шайқаста жеңіліп, жерлерінен толық айырылып қалды.</label>
+    </div>
+
+    <!-- 3-бөлім: Тұлғалардың тарихи бағасы -->
+    <div style="background: white; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 6px solid #047857; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+        <h4 style="color: #065f46; margin-top: 0;">👑 3-кезең: Тұлғалық бағалау [3 балл]</h4>
+        <p style="color: #334155;"><i>Халық арасында батырлардың беделі неліктен биік болды?</i></p>
+        <label style="cursor: pointer;"><input type="radio" name="strat3" value="3"> Олар өз өмірін қатерге тігіп, халықтың бірлігі мен жерін қорғаудағы ерлігі үшін халықтың қалауlı көшбасшысына айналды.</label><br><br>
+        <label style="cursor: pointer;"><input type="radio" name="strat3" value="0"> Олар тек өз мүдделерін ғана көздеді.</label>
+    </div>
+
+    <button onclick="calculateStratScore()" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; border: none; padding: 14px 24px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); transition: 0.3s;">🎯 Менеджмент нәтижесін тексеру (10 балл)</button>
+
+    <div id="stratResult" style="margin-top: 20px; font-weight: bold; font-size: 18px; text-align: center; padding: 10px;"></div>
+</div>
+
+<script>
+    function calculateStratScore() {
+        const name = document.getElementById('studentName3').value.trim();
+        if(!name) {
+            alert("Өтінемін, оқушының аты-жөнін жазыңыз!");
+            return;
+        }
+
+        let score = 0;
+        
+        const s1 = document.querySelector('input[name="strat1"]:checked');
+        const s2 = document.querySelector('input[name="strat2"]:checked');
+        const s3 = document.querySelector('input[name="strat3"]:checked');
+
+        if(s1) score += parseInt(s1.value);
+        if(s2) score += parseInt(s2.value);
+        if(s3) score += parseInt(s3.value);
+
+        const resDiv = document.getElementById('stratResult');
+        resDiv.innerHTML = `🏆 Оқушы: ${name} <br>⭐ Стратегиялық ұпайыңыз: ${score} / 10 балл`;
+        
+        if(score === 10) {
+            resDiv.style.color = "#047857";
+            resDiv.innerHTML += "<br>🌟 Керемет! Сіз нағыз стратегиялық менеджерсіз!";
+        } else if(score >= 6) {
+            resDiv.style.color = "#b45309";
+            resDiv.innerHTML += "<br>👍 Жақсы нәтиже! Тарихи тұлғалардың рөлін тамаша түсіндіңіз.";
+        } else {
+            resDiv.style.color = "#dc2626";
+            resDiv.innerHTML += "<br>💡 Қайтадан тақырыпты оқып, тапсырманы қайталап көріңіз!";
+        }
+    }
+</script>
